@@ -6,4 +6,6 @@ Think of it like this: on your computer or phone, apps can’t just grab whateve
 - Ring 3 is for user-space applications - the least privileged level. Every app gets its own virtual memory space and can’t see other apps. This sandbox prevents a crash in one app from taking down the whole system. Ring 3 is where the magic starts.<br />
    
 - Ring 2 and 1 were designed for device drivers or intermediate OS services but offer less protection than Ring 0. These intermediate levels are generally unused in Windows, most drivers run directly in Ring 0 for performance or are isolated in user mode.<br />
+
+- Ring 0 the kernel. It has access to the entire system and acts as the bridge connecting user programs to the hardware,the magic happens here.
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/9e7f628d-eaf6-444e-970c-206bf320b5a0" />
