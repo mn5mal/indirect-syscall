@@ -9,3 +9,7 @@ Think of it like this: on your computer or phone, apps can’t just grab whateve
 
 - Ring 0 the kernel. It has access to the entire system and acts as the bridge connecting user programs to the hardware,the magic happens here.
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/9e7f628d-eaf6-444e-970c-206bf320b5a0" />
+<br />
+<br />
+The diagram below shows the distinction between the two modes, and an high-level overview of the key components included with each one.<br />
+<img width="747" height="623" alt="image" src="https://github.com/user-attachments/assets/bd7f0a4c-baea-4bd6-9408-e6b878c5ceae" />
