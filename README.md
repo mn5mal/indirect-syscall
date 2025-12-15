@@ -19,3 +19,8 @@ The diagram below shows the distinction between the two modes, and an high-level
 ## :snowflake: indirect system call
 
 In Windows, a system call is how a user-mode program temporarily switches to kernel mode. For example this is needed for tasks like saving a file from Notepad. Every system call has a unique syscall ID(SSN), and these SSNs can change from one Windows version to another. Indirect system calls are a technique used by attackers (red teams) to execute code via Windows APIs from within the memory space of ntdll.dll. This makes the execution of the syscall command appear more legitimate to EDR (Endpoint Detection and Response) systems. The return statement from the system call is then directed back from ntdll.dll memory to the memory of the attacker's own assembly code.
+<br />
+<br />
+<br /> Normal windows flow
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/c48c0071-6955-45be-8da2-231521ef14f2" />
+
