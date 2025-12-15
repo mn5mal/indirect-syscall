@@ -28,7 +28,8 @@ In Windows, a system call is how a user-mode program temporarily switches to ker
 <br />
 Indirect system call flow:
 <br />
-<img width="1840" height="1078" alt="image" src="https://github.com/user-attachments/assets/2e8360f8-27ed-466a-a104-3a1b222434dd" />
+<img width="1840" height="1078" alt="image" src="https://github.com/user-attachments/assets/a70ef798-be92-4024-90dd-69fe21cb58d8" />
+
 <br />
 <br />
 
