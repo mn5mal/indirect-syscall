@@ -1,4 +1,4 @@
-# indirect-syscall    
+## ℹ️ Overview  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let’s set the stage before we get into the article itself, because it’s very important to understand the system first.
 Think of it like this: on your computer or phone, apps can’t just grab whatever they want-memory, files and etc... They gotta ask the kernel, the system’s main guard, for a green light. They do that through a series of APIs. It’s all about keeping things locked down, so one bad app doesn’t crash everything or steal data. These APIs come in two types: documented ones (like kernel32.dll and kernelbase.dll) and undocumented ones (like ntdll.dll). Microsoft probably did this to stop devs or malicious actors from getting too comfortable with the deep system structure. So they divided up the access rights into four rings and keep calm, Sauron and Frodo aren’t involved this time.<br />
@@ -13,3 +13,8 @@ Think of it like this: on your computer or phone, apps can’t just grab whateve
 <br />
 The diagram below shows the distinction between the two modes, and an high-level overview of the key components included with each one.<br />
 <img width="747" height="623" alt="image" src="https://github.com/user-attachments/assets/bd7f0a4c-baea-4bd6-9408-e6b878c5ceae" />
+<br />
+<br />
+
+## :snowflake: indirect system call
+
