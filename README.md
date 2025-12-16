@@ -59,7 +59,9 @@ HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
 ```
 <br />
  Declare and initialize a pointer to the NtCreateFile function and get the address of the NtAllocateVirtualMemory function in the ntdll.dll module<br />
-      ```bash UINT_PTR pNtCreateFile = (UINT_PTR)GetProcAddress(hNtdll, "NtCreateFile");``` 
+      ```
+      bash UINT_PTR pNtCreateFile = (UINT_PTR)GetProcAddress(hNtdll, "NtCreateFile");
+      ``` 
 <br />
    
    The (BYTE*) cast treats the function pointer as an array of bytes, letting us read the function's raw machine code byte-by-byte. The syscall number for NtCreateFile is embedded within its implementation in ntdll.dll. On modern 64-bit Windows, this value is typically stored starting at the 5th byte (index [4]) of the function's prologue.<br />
