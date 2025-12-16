@@ -47,4 +47,14 @@ Okay, let’s get to the guts of this article. If you want to write similar code
    They will also require some specific adjustments, which you can find illustrated in the screenshots below.
    <img width="1965" height="992" alt="Screenshot 2025-12-16 104449" src="https://github.com/user-attachments/assets/5e97db40-d05c-42d3-9ac5-e636ded99a8f" />
 <img width="1734" height="714" alt="Screenshot 2025-12-16 104627" src="https://github.com/user-attachments/assets/a4cdb8a6-330f-4c4e-bfc6-67b2004b5fea" />
+<br />
+<br />
+First we want to use GetModuleHandleA to open a handle to ntdll.dll at runtime.<br />
+```
+HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
+    if (!hNtdll) {
+        printf("Could not get ntdll.dll\n");
+        return;
+    }
+```
 
