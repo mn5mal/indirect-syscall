@@ -70,5 +70,5 @@ HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
    The syscall stub (actual system call instruction) is some bytes further into the function.<br />
    In this case, it's assumed to be 0x12 (18 in decimal) bytes from the start of the function.<br />
    So we add 0x12 to the function's address to get the address of the system call instruction.<br />
-   ```sysAddrNtCreateFile = FindSyscallInstruction(pNtCreateFile);```
+   ```sysAddrNtCreateFile = FindSyscallInstruction(pNtCreateFile);```=
    ```sysAddrNtCreateFile =pNtCreateFile + 0x12;```
