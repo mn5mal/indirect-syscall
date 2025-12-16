@@ -91,6 +91,42 @@ NtCreateFile PROC                        ; NtCreateFile syscall procedure
     jmp QWORD PTR [sysAddrNtCreateFile]  ; Jump to the actual syscall.
 NtCreateFile ENDP                        ; End of the procedure.
 ```
+<br />
+Visual Schema for NtCreateFile:<br />
+```
+┌─────────────────────────────────────────────────────────┐
+│                    NTDLL.DLL MEMORY                     │
+├─────────────────────────────────────────────────────────┤
+│ Base Address: 0x00007FFFB8CA0000                        │
+│                                                         │
+│ ... (other functions) ...                              │
+│                                                         │
+│ ┌─────────────────────────────────────────────────┐   │
+│ │ NtCreateFile @ 0x00007FFFB8E02750 ◄────────────┼───┼─── Function Address
+│ ├─────────────────────────────────────────────────┤   │    (Base + 0x162750)
+│ │ +0x00: mov r10, rcx                             │   │
+│ │ +0x03: mov eax, 0x55      ◄─────────────────────┼───┼─── SSN (Syscall Number)
+│ │ +0x08: test byte ptr [7FFE0308h], 1            │   │
+│ │ +0x0F: jne short jump_target                    │   │
+│ │ +0x11: syscall            ◄─────────────────────┼───┼─── Kernel Transition
+│ │ +0x13: ret                                      │   │
+│ └─────────────────────────────────────────────────┘   │
+│                                                         │
+│ ... (other functions) ...                              │
+└─────────────────────────────────────────────────────────┘
 
-
+         ▼ syscall instruction executed ▼
+         
+┌─────────────────────────────────────────────────────────┐
+│                   KERNEL MODE (ntoskrnl)                │
+├─────────────────────────────────────────────────────────┤
+│  SSDT (System Service Descriptor Table)                 │
+│  ┌──────────┬─────────────────────────┐                │
+│  │ Index    │ Kernel Function         │                │
+│  ├──────────┼─────────────────────────┤                │
+│  │ 0x55 ◄───┼─► NtCreateFile (kernel) │                │
+│  │ ...      │ ...                     │                │
+│  └──────────┴─────────────────────────┘                │
+└─────────────────────────────────────────────────────────┘
+```
 
