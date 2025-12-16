@@ -37,7 +37,7 @@ Okay, let’s get to the guts of this article. If you want to write similar code
    - The main C file: **indirect-syscalls.c**
 
    - The assembly file: **syscalls.asm**<br />
-   We don't want ask **ntdll.dll** for the function definition of the native APIs. But we still want to use the native functions, so      we need to define or directly implement the structure for all four native functions in a header file. In this case, the header file    should be called **syscalls.h**.
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We don't want ask **ntdll.dll** for the function definition of the native APIs. But we still want to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use the native functions, so      we need to define or directly implement the structure for all four &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;native functions in a header file. In this case, the header file    should be called **syscalls.h**.
 
    - The header file: **syscalls.h**
 
