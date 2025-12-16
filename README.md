@@ -114,9 +114,7 @@ Visual Schema for NtCreateFile:<br />
 │                                                         │
 │ ... (other functions) ...                               │
 └─────────────────────────────────────────────────────────┘
-
-         ▼ syscall instruction executed ▼
-   
+         ▼ syscall instruction executed ▼   
 ┌─────────────────────────────────────────────────────────┐
 │                   KERNEL MODE (ntoskrnl)                │
 ├─────────────────────────────────────────────────────────┤
