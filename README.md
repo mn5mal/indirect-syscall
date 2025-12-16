@@ -43,4 +43,4 @@ Okay, let’s get to the guts of this article. If you want to write similar code
    They will also require some specific adjustments, which you can find illustrated in the screenshots below.
    <img width="1965" height="992" alt="Screenshot 2025-12-16 104449" src="https://github.com/user-attachments/assets/5e97db40-d05c-42d3-9ac5-e636ded99a8f" />
 <img width="1734" height="714" alt="Screenshot 2025-12-16 104627" src="https://github.com/user-attachments/assets/a4cdb8a6-330f-4c4e-bfc6-67b2004b5fea" />
-
+We don't want ask **ntdll.dll** for the function definition of the native APIs. But we still want to use the native functions, so we need to define or directly implement the structure for all four native functions in a header file. In this case, the header file should be called **syscalls.h**.
