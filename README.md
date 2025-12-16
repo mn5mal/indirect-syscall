@@ -18,7 +18,7 @@ The diagram below shows the distinction between the two modes, and an high-level
 
 ## :snowflake: indirect system call
 
-In Windows, a system call is how a user-mode program temporarily switches to kernel mode. For example this is needed for tasks like saving a file from Notepad. Every system call has a unique syscall ID(SSN), and these SSNs can change from one Windows version to another. Indirect system calls are a technique used by attackers (red teams) to execute code via Windows APIs from within the memory space of ntdll.dll. This makes the execution of the syscall command appear more legitimate to EDR (Endpoint Detection and Response) systems. The return statement from the system call is then directed back from ntdll.dll memory to the memory of the attacker's own assembly code.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Windows, a system call is how a user-mode program temporarily switches to kernel mode. For example this is needed for tasks like saving a file from Notepad. Every system call has a unique syscall ID(SSN), and these SSNs can change from one Windows version to another. Indirect system calls are a technique used by attackers (red teams) to execute code via Windows APIs from within the memory space of ntdll.dll. This makes the execution of the syscall command appear more legitimate to EDR (Endpoint Detection and Response) systems. The return statement from the system call is then directed back from ntdll.dll memory to the memory of the attacker's own assembly code.
 <br />
 <br />
 <br /> Normal windows flow:
@@ -64,7 +64,7 @@ HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
 
 <br />
    
-   The (BYTE*) cast treats the function pointer as an array of bytes, letting us read the function's raw machine code byte-by-byte. The syscall number for NtCreateFile is embedded within its implementation in ntdll.dll. On modern 64-bit Windows, this value is typically stored starting at the 5th byte (index [4]) of the function's prologue.<br />
+    I chose to locate it dynamically by scanning for the 0F 05 byte sequence, which is the machine code for the syscall instruction in 64-bit Windows. Alternatively, you can add 0x12 to the function's starting address to reach the same instruction, as that is a common static offset in modern ntdll.dll.The (BYTE*) cast treats the function pointer as an array of bytes, letting us read the function's raw machine code byte-by-byte. The syscall number for NtCreateFile is embedded within its implementation in ntdll.dll. On modern 64-bit Windows, this value is typically stored starting at the 5th byte (index [4]) of the function's prologue.<br />
     ```wNtCreateFile = ((BYTE*)pNtCreateFile)[4];```<br />
 
    The syscall stub (actual system call instruction) is some bytes further into the function.<br />
