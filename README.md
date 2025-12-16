@@ -49,7 +49,7 @@ Okay, let’s get to the guts of this article. If you want to write similar code
 <img width="1734" height="714" alt="Screenshot 2025-12-16 104627" src="https://github.com/user-attachments/assets/a4cdb8a6-330f-4c4e-bfc6-67b2004b5fea" />
 <br />
 <br />
-First we want to use GetModuleHandleA to open a handle to ntdll.dll at runtime.<br />
+First we want to use **GetModuleHandleA** to open a handle to ntdll.dll at runtime.<br />
 ```
 HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
     if (!hNtdll) {
