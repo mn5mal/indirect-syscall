@@ -93,7 +93,7 @@ NtCreateFile ENDP                        ; End of the procedure.
 ```
 <br />
 Visual Schema for NtCreateFile:<br />
-   ```bash
+   ```text
 ┌─────────────────────────────────────────────────────────┐
 │                    NTDLL.DLL MEMORY                     │
 ├─────────────────────────────────────────────────────────┤
