@@ -31,5 +31,16 @@ Indirect system call flow:
 <img width="1659" height="939" alt="image" src="https://github.com/user-attachments/assets/253c4eb9-1466-4074-bfce-6b184504bfe3" />
 <br />
 <br />
+Okay, let’s get to the guts of this article. If you want to write similar code yourself, you’ll need a little guidance. I’ll help you do it, step by step.
+    You’ll need to create several files in your IDE. In my example, there are three:
 
+   The main C file: **indirect-syscalls.c**
+
+   The assembly file: **syscalls.asm**
+
+   The header file: **syscalls.h**
+
+   They will also require some specific adjustments, which you can find illustrated in the screenshots below.
+   <img width="1965" height="992" alt="Screenshot 2025-12-16 104449" src="https://github.com/user-attachments/assets/5e97db40-d05c-42d3-9ac5-e636ded99a8f" />
+<img width="1734" height="714" alt="Screenshot 2025-12-16 104627" src="https://github.com/user-attachments/assets/a4cdb8a6-330f-4c4e-bfc6-67b2004b5fea" />
 
