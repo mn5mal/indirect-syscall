@@ -78,5 +78,6 @@ HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
         }
    ```
 <br />
-   ```sysAddrNtCreateFile = FindSyscallInstruction(pNtCreateFile);```=
-   ```sysAddrNtCreateFile =pNtCreateFile + 0x12;```
+
+```sysAddrNtCreateFile = FindSyscallInstruction(pNtCreateFile);```=
+```sysAddrNtCreateFile =pNtCreateFile + 0x12;```
