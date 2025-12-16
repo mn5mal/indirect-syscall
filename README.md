@@ -35,6 +35,7 @@ Okay, let’s get to the guts of this article. If you want to write similar code
     You’ll need to create several files in your IDE. In my example, there are three:
 
    - The main C file: **indirect-syscalls.c**<br />
+      The program's starting point,the orchestrator and the user interface.
 
    - The assembly file: **syscalls.asm**<br />
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;we do not want to ask **ntdll.dll** for the syscall stub or the content or code of the syscall stub (assembly instructions **mov r10, rcx, mov eax**, SSN etc.) of the native functions we use, instead we have to implement the necessary assembly code in the assembly itself.
