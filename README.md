@@ -58,9 +58,9 @@ HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
     }
 ```
 <br />
- Declare and initialize a pointer to the NtCreateFile function and get the address of the NtAllocateVirtualMemory function in the ntdll.dll module
+ Declare and initialize a pointer to the NtCreateFile function and get the address of the NtAllocateVirtualMemory function in the ntdll.dll module<br />
    ```UINT_PTR pNtCreateFile = (UINT_PTR)GetProcAddress(hNtdll, "NtCreateFile");``` <br />
    
 Read the syscall number from the NtCreateFile function in **ntdll.dll**<br />
-This is typically located at the 4th byte of the function
+This is typically located at the 4th byte of the function<br />
     ```wNtCreateFile = ((BYTE*)pNtCreateFile)[4];```<br />
