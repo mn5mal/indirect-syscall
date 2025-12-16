@@ -66,3 +66,9 @@ HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
    
    The (BYTE*) cast treats the function pointer as an array of bytes, letting us read the function's raw machine code byte-by-byte. The syscall number for NtCreateFile is embedded within its implementation in ntdll.dll. On modern 64-bit Windows, this value is typically stored starting at the 5th byte (index [4]) of the function's prologue.<br />
     ```wNtCreateFile = ((BYTE*)pNtCreateFile)[4];```<br />
+
+   The syscall stub (actual system call instruction) is some bytes further into the function.<br />
+   In this case, it's assumed to be 0x12 (18 in decimal) bytes from the start of the function.<br />
+   So we add 0x12 to the function's address to get the address of the system call instruction.<br />
+   ```sysAddrNtCreateFile = FindSyscallInstruction(pNtCreateFile);```
+   ```sysAddrNtCreateFile =pNtCreateFile + 0x12;```
