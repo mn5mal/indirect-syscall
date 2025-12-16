@@ -80,4 +80,17 @@ HANDLE hNtdll = GetModuleHandleA("ntdll.dll");
 <br />
 
 ```sysAddrNtCreateFile = FindSyscallInstruction(pNtCreateFile);```=
-```sysAddrNtCreateFile =pNtCreateFile + 0x12;```
+```sysAddrNtCreateFile = pNtCreateFile + 0x12;```<br />
+
+All extracted information will be used for an **unconditional** jump (**jmp**)<br />
+```
+
+NtCreateFile PROC                        ; NtCreateFile syscall procedure
+    mov r10, rcx                         ; Move the contents of rcx to r10. This is necessary because the syscall instruction in 64-bit Windows                                                   expects the parameters to be in the r10 and rdx registers.
+    mov eax, wNtCreateFile               ; Move the syscall number into the eax register.
+    jmp QWORD PTR [sysAddrNtCreateFile]  ; Jump to the actual syscall.
+NtCreateFile ENDP                        ; End of the procedure.
+```
+
+
+
