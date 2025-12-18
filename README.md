@@ -133,7 +133,7 @@ Visual Schema for NtCreateFile:<br />
 ## :mag: Proof of Concept(PoC)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can use Visual Studio’s dumpbin tool to check which Windows APIs are imported through kernel32.dll. The following command shows these imports:<br />
 ```dumpbin /imports nameOfTheProgram.exe```<br />
-    I won't provide the standard Windows API code here — [that’s well documented by Microsoft](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/). I believe if you've come this far, you can write a simple Portable Executable (PE) for your own tests, but I will show you the difference between a standard API call and indirect syscalls.<br />
+    I won't provide the standard Windows API code here - [that’s well documented by Microsoft](https://learn.microsoft.com/en-us/windows/win32/api/fileapi/). I believe if you've come this far, you can write a simple Portable Executable (PE) for your own tests, but I will show you the difference between a standard API call and indirect syscalls.<br />
     Standard method using **kernel32.dll**:<img width="922" height="853" alt="normal" src="https://github.com/user-attachments/assets/29ffaf6b-64fd-468e-a26b-a82693f14cd4" />
  <br />
  <br />
