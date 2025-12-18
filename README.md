@@ -131,3 +131,5 @@ Visual Schema for NtCreateFile:<br />
 <br />
 
 ## :mag: Proof of Concept(PoC)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can use Visual Studio’s dumpbin tool to check which Windows APIs are imported through kernel32.dll. The following command shows these imports:<br />
+```dumpbin /imports nameOfTheProgram.exe```
