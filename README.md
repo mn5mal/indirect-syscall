@@ -139,4 +139,5 @@ Visual Schema for NtCreateFile:<br />
  <br />
  <br />
     As you can see, our POC has no imports from Windows APIs: **Createfile**, **WriteFile**, **CloseHandle**   <img width="816" height="1046" alt="Screenshot 2025-12-18 095615" src="https://github.com/user-attachments/assets/226ea9a1-01a8-405a-845a-f1937af0ad49" />
-
+ <br />
+To be continued...
