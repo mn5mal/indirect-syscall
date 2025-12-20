@@ -1,14 +1,15 @@
 #ifndef _SYSCALLS_H  // If _SYSCALLS_H is not defined then define it and the contents below. This is to prevent double inclusion.
 #define _SYSCALLS_H  // Define _SYSCALLS_H
 
-#include <windows.h>  // Include the Windows API header
+//#include <windows.h>  // Include the Windows API header
 #include <winternl.h> // exposes prototypes of internal Windows APIs
 // The type NTSTATUS is typically defined in the Windows headers as a long.
 typedef long NTSTATUS;  // Define NTSTATUS as a long
 typedef NTSTATUS* PNTSTATUS;  // Define a pointer to NTSTATUS
 
+
 // Declare the function prototype for NtCreateFile
-extern NTSTATUS NtCreateFile(
+extern NTSTATUS reNtCreateFile(
     PHANDLE            FileHandle,
     ACCESS_MASK        DesiredAccess,
     POBJECT_ATTRIBUTES ObjectAttributes,
@@ -22,8 +23,9 @@ extern NTSTATUS NtCreateFile(
     ULONG              EaLength
 );
 
+
 // Declare the function prototype for NtWriteFile
-extern NTSTATUS NtWriteFile(
+extern NTSTATUS reNtWriteFile(
     HANDLE           FileHandle,
     HANDLE           Event,
     PIO_APC_ROUTINE  ApcRoutine,
@@ -36,7 +38,7 @@ extern NTSTATUS NtWriteFile(
 );
 
 // Declare the function prototype for NtClose
-extern NTSTATUS NtClose(
+extern NTSTATUS reNtClose(
     HANDLE Handle
 );
 

@@ -119,7 +119,7 @@ int main() {
     InitializeObjectAttributes(&objectAttributes, &fileName, OBJ_CASE_INSENSITIVE, NULL, NULL);
 
     // Create file using indirect syscall
-    NTSTATUS status = NtCreateFile(
+    NTSTATUS status = reNtCreateFile(
         &hFile,
         FILE_GENERIC_WRITE | FILE_GENERIC_READ,
         &objectAttributes,
@@ -148,7 +148,7 @@ int main() {
 
         InitializeObjectAttributes(&objectAttributes, &fileName, OBJ_CASE_INSENSITIVE, NULL, NULL);
 
-        status = NtCreateFile(
+        status = reNtCreateFile(
             &hFile,
             FILE_GENERIC_WRITE | FILE_GENERIC_READ,
             &objectAttributes,
@@ -175,7 +175,7 @@ int main() {
     char data[] = "Hello from Indirect Syscalls! File created using NtCreateFile syscall.";
     ULONG dataLength = (ULONG)strlen(data);
 
-    status = NtWriteFile(
+    status = reNtWriteFile(
         hFile,
         NULL,
         NULL,
@@ -189,14 +189,14 @@ int main() {
 
     if (!NT_SUCCESS(status)) {
         printf("NtWriteFile failed with status: 0x%X\n", status);
-        NtClose(hFile);
+        reNtClose(hFile);
         return 1;
     }
 
     printf("Data written to file: %lu bytes\n", dataLength);
 
     // Close file handle
-    status = NtClose(hFile);
+    status = reNtClose(hFile);
     if (!NT_SUCCESS(status)) {
         printf("NtClose failed with status: 0x%X\n", status);
         return 1;

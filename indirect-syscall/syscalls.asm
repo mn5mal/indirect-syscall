@@ -10,24 +10,24 @@ EXTERN wNtClose:DWORD                ; Holds the dynamic retrieved SSN for NtClo
 EXTERN sysAddrNtClose:QWORD          ; The actual address of the NtClose syscall in ntdll.dll
 
 ; NtCreateFile procedure
-NtCreateFile PROC
+reNtCreateFile PROC
     mov r10, rcx
     mov eax, wNtCreateFile
     jmp QWORD PTR [sysAddrNtCreateFile]
-NtCreateFile ENDP
+reNtCreateFile ENDP
 
 ; NtWriteFile syscall procedure  
-NtWriteFile PROC
+reNtWriteFile PROC
     mov r10, rcx                            ; Move the contents of rcx to r10. This is necessary because the syscall instruction in 64-bit Windows expects the parameters to be in the r10 and rdx registers.
     mov eax, wNtWriteFile                   ; Move the syscall number into the eax register.
     jmp QWORD PTR [sysAddrNtWriteFile]      ; Jump to the actual syscall.
-NtWriteFile ENDP                            ; End of the procedure.
+reNtWriteFile ENDP                          ; End of the procedure.
 
 ; NtClose procedure
-NtClose PROC
+reNtClose PROC
     mov r10, rcx
     mov eax, wNtClose
     jmp QWORD PTR [sysAddrNtClose]
-NtClose ENDP
+reNtClose ENDP
 
 END
