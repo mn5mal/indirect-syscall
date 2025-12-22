@@ -177,3 +177,13 @@ This is how a not modified syscall stub looks in memory:
 <br />
 This is an example of a syscall stub that is hooked by a modern EDR:
 <img width="1229" height="210" alt="Screenshot from 2025-12-22 20-47-12" src="https://github.com/user-attachments/assets/1aa814c5-dcee-4f75-849f-7a94fca38576" />
+<br />
+<br />
+
+## Summary
+- This approach achieves the following:
+- Eliminates import dependencies on both kernel32.dll and ntdll.dll.
+- Implements the syscall stub directly within the loader’s own .text section.
+- Executes the actual syscall and ret instructions from the memory space of ntdll.dll.
+- Effectively bypasses user‑mode API hooks set by EDR solutions inside ntdll.dll.
+- Evades EDR detection mechanisms that monitor syscall origins and return addresses in the call stack.
