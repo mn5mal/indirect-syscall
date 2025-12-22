@@ -189,10 +189,12 @@ This is an example of a syscall stub that is hooked by a modern EDR:
 - Evades EDR detection mechanisms that monitor syscall origins and return addresses in the call stack.
 <br />
 <br />
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indirect syscalls represent an improvement over direct syscalls, yet they are not without constraints. A key limitation in the POC discussed here arises when an EDR places an inline hook on a Native API.
 Here's the issue: the EDR's inline hook replaces the crucial __mov eax, SSN__ instruction (which holds the syscall number) with an unconditional **jmp** to its own detection routine. When this happens, the syscall number can no longer be dynamically read from the **ntdll.dll** loaded in memory.
 To work around this, the inline hook must first be removed from the affected API to restore and read the original **mov eax, SSN** instruction.
 However, a critical point emerged during this exploration: while an EDR can hook or replace the **mov eax, SSN**, it cannot hook the **syscall** instruction itself. This is why indirect syscalls remain effective - the EDR cannot block us from executing the actual syscall instruction within the memory of **ntdll.dll**.<br />
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Think of this technique as a single snowflake in a blizzard - one snowflake isn’t enough to build a snowman, but if you collect enough, you can bring the whole storm with you.
 
 <img width="1346" height="186" alt="Screenshot 2025-12-22 095732" src="https://github.com/user-attachments/assets/0ab0d48a-608c-4b11-a935-5c4e0082a7d3" />
