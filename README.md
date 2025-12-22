@@ -140,6 +140,8 @@ Visual Schema for NtCreateFile:<br />
  <br />
     As you can see, our POC has no imports from Windows APIs: **Createfile**, **WriteFile**, **CloseHandle**   <img width="816" height="1046" alt="Screenshot 2025-12-18 095615" src="https://github.com/user-attachments/assets/226ea9a1-01a8-405a-845a-f1937af0ad49" />
  <br />
+ <br />
+ <br />
 You can also debug the executable dynamically to trace its execution. For this example, I used x64dbg. <br />
 Start **indirect-syscall.exe** and attach your debugger to it. The **getchar()** call inside **indirect-syscalls.c** will pause execution, keeping the program waiting in the popped-up window until you press Enter.<br />
 Start x64dbg (or your preferred debugger) and attach to the process.
