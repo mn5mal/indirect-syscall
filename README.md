@@ -161,9 +161,9 @@ You can also follow the screenshots below for visual guidance.
 
 <table>
    <tr>
- <td><img width="1441" height="121" alt="Screenshot 2025-12-22 095532" src="https://github.com/user-attachments/assets/4ef31fdd-354e-4b64-a1a0-32c5a66725c4" width="400"></td>
- <td><img width="376" height="198" alt="Screenshot 2025-12-22 095613" src="https://github.com/user-attachments/assets/4887deb6-df03-430b-b254-7e4e162c0f0a" width="400"></td>
- <td><img width="1380" height="213" alt="Screenshot 2025-12-22 095647" src="https://github.com/user-attachments/assets/a3dc6212-b4bf-4bd3-8ff3-9789b400b53c" width="400"></td>
+ <td><img width="1441" height="121" alt="Screenshot 2025-12-22 095532" src="https://github.com/user-attachments/assets/4ef31fdd-354e-4b64-a1a0-32c5a66725c4" width="600"></td>
+ <td><img width="376" height="198" alt="Screenshot 2025-12-22 095613" src="https://github.com/user-attachments/assets/4887deb6-df03-430b-b254-7e4e162c0f0a" width="600"></td>
+ <td><img width="1380" height="213" alt="Screenshot 2025-12-22 095647" src="https://github.com/user-attachments/assets/a3dc6212-b4bf-4bd3-8ff3-9789b400b53c" width="600"></td>
   </tr>
 </table>
 
