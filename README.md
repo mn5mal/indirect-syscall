@@ -180,7 +180,7 @@ This is an example of a syscall stub that is hooked by a modern EDR:
 <br />
 <br />
 
-## Summary
+## :newspaper: Summary 
 - This approach achieves the following:
 - Eliminates import dependencies on both **kernel32.dll** and **ntdll.dll**.
 - Implements the syscall stub directly within the loader’s own **.text** section.
