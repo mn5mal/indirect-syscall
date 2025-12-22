@@ -133,6 +133,8 @@ int main() {
         0
     );
 
+    getchar();  // This prevents the program from exiting, allowing you to inspect it in a dynamic debugger.
+    
     // Use NT_SUCCESS macro for status checking
     if (!NT_SUCCESS(status)) {
         printf("NtCreateFile failed with status: 0x%X\n", status);
