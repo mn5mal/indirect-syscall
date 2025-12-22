@@ -201,6 +201,8 @@ If an EDR leverages Event Tracing for Windows (ETW) or Event Tracing for Windows
 <br />
 <br />
 
+Everything was tested on **Windows 11, version 25H2 (OS Build 26200.7462)**, but it should work on other versions as well.
+
 ## :receipt:References
 
 
