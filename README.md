@@ -142,7 +142,7 @@ Visual Schema for NtCreateFile:<br />
  <br />
  <br />
  <br />
-You can also debug the executable dynamically to trace its execution. For this example, I used x64dbg. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also debug the executable dynamically to trace its execution. For this example, I used x64dbg. <br />
 Start **indirect-syscall.exe** and attach your debugger to it. The **getchar()** call inside **indirect-syscalls.c** will pause execution, keeping the program waiting in the popped-up window until you press Enter.<br />
 Start x64dbg (or your preferred debugger) and attach to the process.
 After attaching, go to the **Modules** view and examine the functions to confirm that it's using the unhooked version of **ntdll.dll**.
