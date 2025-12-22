@@ -167,6 +167,11 @@ You can also follow the screenshots below for visual guidance.
   </tr>
 </table>
 
-
-
-
+<br />
+<br />
+<br />
+This is how a not modified syscall stub looks in memory:
+<img width="1346" height="186" alt="Screenshot 2025-12-22 095732" src="https://github.com/user-attachments/assets/727ff24e-962b-4195-8b81-34a063153915" />
+<br />
+<br />
+This is an example of a syscall stub hooked by a modern, advanced EDR:
