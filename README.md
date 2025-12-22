@@ -200,7 +200,10 @@ If an EDR leverages Event Tracing for Windows (ETW) or Event Tracing for Windows
 <img width="1346" height="186" alt="Screenshot 2025-12-22 095732" src="https://github.com/user-attachments/assets/0ab0d48a-608c-4b11-a935-5c4e0082a7d3" />
 <br />
 <br />
+
 ## :receipt:References
+
+
 https://redops.at/en/knowledge-base<br />
 https://fzm.ooo/<br />
 https://blog.sektor7.net/#!res/2021/halosgate.md<br />
@@ -210,4 +213,4 @@ https://www.crow.rip/nest/<br />
 https://trickster0.github.io/posts/Halo%27s-Gate-Evolves-to-Tartarus-Gate/<br />
 https://en.wikipedia.org/wiki/Protection_ring/<br />
 
-Special thanks to: [byte4byte)](https://emryll.gitbook.io/byte4byte) and [eversinc33](https://x.com/eversinc33)
+Special thanks to: [byte4byte](https://emryll.gitbook.io/byte4byte) and [eversinc33](https://x.com/eversinc33)
