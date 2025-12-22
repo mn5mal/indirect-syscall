@@ -145,10 +145,4 @@ Start **indirect-syscall.exe** and attach your debugger to it. The **getchar()**
 Start x64dbg (or your preferred debugger) and attach to the process.
 After attaching, go to the **Modules** view and examine the functions to confirm that it's using the unhooked version of **ntdll.dll**.
 You can also follow the screenshots below for visual guidance.
-<img width="1380" height="213" alt="Screenshot 2025-12-22 095647" src="https://github.com/user-attachments/assets/eab0187c-f157-4383-8ab4-9c4364a82d05" />
-<img width="376" height="198" alt="Screenshot 2025-12-22 095613" src="https://github.com/user-attachments/assets/bf7aa458-b57e-4608-9a73-aa6a0bc46133" />
-<img width="1441" height="121" alt="Screenshot 2025-12-22 095532" src="https://github.com/user-attachments/assets/e6dc24a3-161c-468d-86a8-ed579bf0b582" />
-<img width="249" height="642" alt="Screenshot 2025-12-22 095432" src="https://github.com/user-attachments/assets/838bc3e0-7a90-49f5-9acd-7954f505745d" />
-<img width="808" height="431" alt="Screenshot 2025-12-22 095403" src="https://github.com/user-attachments/assets/d89d98dc-f207-4d42-96d0-8d6029cdaefc" />
-<img width="291" height="249" alt="Screenshot 2025-12-22 095335" src="https://github.com/user-attachments/assets/77562a52-b153-4b9d-b0b7-55ad7aaeee01" />
 
