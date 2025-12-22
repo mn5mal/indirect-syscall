@@ -146,7 +146,8 @@ Visual Schema for NtCreateFile:<br />
 Start **indirect-syscall.exe** and attach your debugger to it. The **getchar()** call inside **indirect-syscalls.c** will pause execution, keeping the program waiting in the popped-up window until you press Enter.<br />
 Start x64dbg (or your preferred debugger) and attach to the process.
 After attaching, go to the **Modules** view and examine the functions to confirm that it's using the unhooked version of **ntdll.dll**.
-You can also follow the screenshots below for visual guidance.
+You can also place a breakpoint on the syscall function - when it's hit, you'll see the unhooked code execute in real time.
+Refer to the screenshots below for visual guidance.
 
 
 <table>
@@ -175,3 +176,4 @@ This is how a not modified syscall stub looks in memory:
 <br />
 <br />
 This is an example of a syscall stub hooked by a modern, advanced EDR:
+<img width="1229" height="210" alt="Screenshot from 2025-12-22 20-47-12" src="https://github.com/user-attachments/assets/1aa814c5-dcee-4f75-849f-7a94fca38576" />
