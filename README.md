@@ -180,7 +180,7 @@ This is an example of a syscall stub that is hooked by a modern EDR:
 <br />
 <br />
 
-## :newspaper: Summary 
+## :scroll: Summary 
 - This approach achieves the following:
 - Eliminates import dependencies on both **kernel32.dll** and **ntdll.dll**.
 - Implements the syscall stub directly within the loader’s own **.text** section.
@@ -194,7 +194,20 @@ This is an example of a syscall stub that is hooked by a modern EDR:
 Here's the issue: the EDR's inline hook replaces the crucial __mov eax, SSN__ instruction (which holds the syscall number) with an unconditional **jmp** to its own detection routine. When this happens, the syscall number can no longer be dynamically read from the **ntdll.dll** loaded in memory.
 To work around this, the inline hook must first be removed from the affected API to restore and read the original **mov eax, SSN** instruction.
 However, a critical point emerged during this exploration: while an EDR can hook or replace the **mov eax, SSN**, it cannot hook the **syscall** instruction itself. This is why indirect syscalls remain effective - the EDR cannot block us from executing the actual syscall instruction within the memory of **ntdll.dll**.<br />
-
+If an EDR leverages Event Tracing for Windows (ETW) or Event Tracing for Windows Threat Intelligence (ETW TI) to analyze the entire call stack - rather than just checking where the syscall was executed or its return address - then indirect syscalls will likely be detected.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Think of this technique as a single snowflake in a blizzard - one snowflake isn’t enough to build a snowman, but if you collect enough, you can bring the whole storm with you.
 
 <img width="1346" height="186" alt="Screenshot 2025-12-22 095732" src="https://github.com/user-attachments/assets/0ab0d48a-608c-4b11-a935-5c4e0082a7d3" />
+<br />
+<br />
+## :receipt:References
+https://redops.at/en/knowledge-base<br />
+https://fzm.ooo/<br />
+https://blog.sektor7.net/#!res/2021/halosgate.md<br />
+https://www.malwaretech.com/2015/01/inline-hooking-for-programmers-part-1.html<br />
+https://www.outflank.nl/blog/2019/06/19/red-team-tactics-combining-direct-system-calls-and-srdi-to-bypass-av-edr/<br />
+https://www.crow.rip/nest/<br />
+https://trickster0.github.io/posts/Halo%27s-Gate-Evolves-to-Tartarus-Gate/<br />
+https://en.wikipedia.org/wiki/Protection_ring/<br />
+
+Special thanks to: [byte4byte)](https://emryll.gitbook.io/byte4byte) and [eversinc33](https://x.com/eversinc33)
