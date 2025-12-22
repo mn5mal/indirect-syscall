@@ -1,4 +1,3 @@
-#include <windows.h>
 #include <stdio.h>
 #include "syscalls.h"
 
@@ -76,7 +75,7 @@ void InitializeSyscalls(void) {
 }
 
 int main() {
-    // Initialize syscalls
+    //Initialize syscalls
     InitializeSyscalls();
 
     // Check if all syscalls were initialized
@@ -101,11 +100,11 @@ int main() {
     if (!GetUserNameW(username, &usernameSize)) {
         printf("Could not get username\n");
         // Fallback to simple path
-        wcscpy_s(filePath, 512, L"\\??\\C:\\Users\\Public\\Desktop\\indirect_file.txt");
+        wcscpy_s(filePath, 512, L"C:\\Users\\Public\\Desktop\\indirect_file.txt");
     }
     else {
         // Create path with actual username
-        swprintf_s(filePath, 512, L"\\??\\C:\\Users\\%s\\Desktop\\indirect_file.txt", username);
+        swprintf_s(filePath, 512, L"C:\\Users\\%s\\Desktop\\indirect_file.txt", username);
     }
 
     printf("Creating file: %ls\n", filePath);
@@ -134,7 +133,8 @@ int main() {
     );
 
     getchar();  // This prevents the program from exiting, allowing you to inspect it in a dynamic debugger.
-    
+
+
     // Use NT_SUCCESS macro for status checking
     if (!NT_SUCCESS(status)) {
         printf("NtCreateFile failed with status: 0x%X\n", status);
