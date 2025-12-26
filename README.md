@@ -215,4 +215,4 @@ https://www.crow.rip/nest/<br />
 https://trickster0.github.io/posts/Halo%27s-Gate-Evolves-to-Tartarus-Gate/<br />
 https://en.wikipedia.org/wiki/Protection_ring/<br />
 Also you can check https://malwaretech.com/2023/12/silly-edr-bypasses-and-where-to-find-them.html/<br />
-**Special thanks to:** [byte4byte](https://emryll.gitbook.io/byte4byte) and [eversinc33](https://x.com/eversinc33) for providing additional information.
+**Special thanks to:** [byte4byte](https://emryll.gitbook.io/byte4byte), [eversinc33](https://x.com/eversinc33) and [Jonathan](https://www.linkedin.com/in/jonathan-lauener-1b97a8233/) for providing additional information.
